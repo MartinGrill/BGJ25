@@ -10,13 +10,8 @@ const LIMIT_BOTTOM = 690
 func _ready():
 	for child in get_children():
 		if child is Player:
-			var camera = child.get_node("Camera")
+			var camera = child.get_node("Camera2D")
 			camera.limit_left = LIMIT_LEFT
 			camera.limit_top = LIMIT_TOP
 			camera.limit_right = LIMIT_RIGHT
 			camera.limit_bottom = LIMIT_BOTTOM
-
-	new_game()
-
-func new_game():
-	$Player.start($StartPosition.position)

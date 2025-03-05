@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bsjtgn1ctnyfe"]
+[gd_scene load_steps=8 format=4 uid="uid://bgriyqgyf78k3"]
 
 [ext_resource type="Script" uid="uid://cbo4wemg3pvau" path="res://scenes/tutorial/tutorial.gd" id="1_jaenq"]
 [ext_resource type="PackedScene" uid="uid://djnvb38vi6kjs" path="res://entities/player/Player.tscn" id="1_ymgc8"]
@@ -8,7 +8,9 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g40di"]
 texture = ExtResource("3_bmltb")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -20,7 +22,9 @@ texture = ExtResource("3_bmltb")
 10:0/0 = 0
 11:0/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
@@ -162,7 +166,7 @@ script = ExtResource("1_jaenq")
 position = Vector2(72, 110)
 
 [node name="Player" parent="." instance=ExtResource("1_ymgc8")]
-position = Vector2(0, 121)
+position = Vector2(77, 108)
 scale = Vector2(0.2, 0.2)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
