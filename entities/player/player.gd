@@ -1,11 +1,10 @@
 class_name Player extends CharacterBody2D
 
-#@export var speed = 100 # How fast the player will move (pixels/sec).
-const WALK_SPEED = 300.0
-const ACCELERATION_SPEED = WALK_SPEED * 6.0
-const JUMP_VELOCITY = -725.0
+const WALK_SPEED = 6000.0
+const ACCELERATION_SPEED = WALK_SPEED * 2.0
+const JUMP_VELOCITY = -280.0
 ## Maximum speed at which the player can fall.
-const TERMINAL_VELOCITY = 700
+const TERMINAL_VELOCITY = 300
 var screen_size # Size of the game window.
 
 var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
@@ -27,7 +26,8 @@ func _physics_process(delta: float) -> void:
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
 
 	var direction := Input.get_axis("move_left", "move_right") * WALK_SPEED
-	velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
+	#velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
+	velocity.x = direction * delta
 
 	if not is_zero_approx(velocity.x):
 		if velocity.x < 0:
