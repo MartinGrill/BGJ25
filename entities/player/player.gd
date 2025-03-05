@@ -5,7 +5,8 @@ const ACCELERATION_SPEED = WALK_SPEED * 2.0
 const JUMP_VELOCITY = -280.0
 ## Maximum speed at which the player can fall.
 const TERMINAL_VELOCITY = 300
-var screen_size # Size of the game window.
+# var screen_size # Size of the game window.
+var can_control : bool = true
 
 var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var platform_detector := $PlatformDetector as RayCast2D
@@ -15,6 +16,8 @@ var _double_jump_charged := false
 
 
 func _physics_process(delta: float) -> void:
+	if not can_control: return
+	
 	if is_on_floor():
 		_double_jump_charged = true
 	if Input.is_action_just_pressed("jump"):
@@ -46,3 +49,6 @@ func try_jump() -> void:
 	else:
 		return
 	velocity.y = JUMP_VELOCITY
+	
+func handle_danger() -> void:
+	pass

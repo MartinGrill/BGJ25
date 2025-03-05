@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c73qgjf1001x0"]
 
-[ext_resource type="Texture2D" uid="uid://w1d6y6wsreal" path="res://scenes/assets/sprites/world_tileset.png" id="1_8iqjj"]
-[ext_resource type="Texture2D" uid="uid://b7145qer8vvch" path="res://scenes/assets/sprites/fruit.png" id="2_pep2q"]
+[ext_resource type="Texture2D" uid="uid://w1d6y6wsreal" path="res://scenes/assets/sprites/world_tileset.png" id="1_3dekm"]
+[ext_resource type="Texture2D" uid="uid://b7145qer8vvch" path="res://scenes/assets/sprites/fruit.png" id="2_rcwvq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g40di"]
-texture = ExtResource("1_8iqjj")
+texture = ExtResource("1_3dekm")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -138,7 +138,7 @@ texture = ExtResource("1_8iqjj")
 3:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r23bs"]
-texture = ExtResource("2_pep2q")
+texture = ExtResource("2_rcwvq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
