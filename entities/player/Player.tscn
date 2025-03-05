@@ -35,7 +35,7 @@ animations = [{
 radius = 27.0
 height = 68.0
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g3lhm")
 metadata/_edit_group_ = true
 
@@ -47,4 +47,9 @@ animation = &"up"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_eaotn")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="PlatformDetector" type="RayCast2D" parent="."]
+target_position = Vector2(0, 6)

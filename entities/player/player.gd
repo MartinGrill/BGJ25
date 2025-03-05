@@ -1,56 +1,48 @@
-extends Area2D
-signal hit
+class_name Player extends CharacterBody2D
 
-@export var speed = 100 # How fast the player will move (pixels/sec).
+#@export var speed = 100 # How fast the player will move (pixels/sec).
+const WALK_SPEED = 300.0
+const ACCELERATION_SPEED = WALK_SPEED * 6.0
+const JUMP_VELOCITY = -725.0
+## Maximum speed at which the player can fall.
+const TERMINAL_VELOCITY = 700
 var screen_size # Size of the game window.
 
-func _ready():
-	screen_size = get_viewport_rect().size
-	#hide() #uncommend if start function is used to play
-	
-func start(pos):
-	position = pos
-	show()
-	$CollisionShape2D.disabled = false
-	
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
+@onready var platform_detector := $PlatformDetector as RayCast2D
 
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
+#Player
+var _double_jump_charged := false
+
+
+func _physics_process(delta: float) -> void:
+	if is_on_floor():
+		_double_jump_charged = true
+	if Input.is_action_just_pressed("jump"):
+		try_jump()
+	elif Input.is_action_just_released("jump") and velocity.y < 0.0:
+		# The player let go of jump early, reduce vertical momentum.
+		velocity.y *= 0.6
+	# Fall.
+	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
+
+	var direction := Input.get_axis("move_left", "move_right") * WALK_SPEED
+	velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
+
+	if not is_zero_approx(velocity.x):
+		if velocity.x < 0:
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
+
+	floor_stop_on_slope = not platform_detector.is_colliding()
+	move_and_slide()
+
+
+func try_jump() -> void:
+	if _double_jump_charged:
+		_double_jump_charged = false
+		velocity.x *= 2.5
 	else:
-		$AnimatedSprite2D.stop()
-		
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
-	
-	if velocity.x != 0:
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.flip_v = false
-		# See the note below about the following boolean assignment.
-		$AnimatedSprite2D.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite2D.animation = "up"
-		$AnimatedSprite2D.flip_v = velocity.y > 0
-		
-	if velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true
-	else:
-		$AnimatedSprite2D.flip_h = false
-		
-
-
-func _on_body_entered(body: Node2D) -> void:
-	hide() # Player disappears after being hit.
-	hit.emit()
-	# Must be deferred as we can't change physics properties on a physics callback.
-	$CollisionShape2D.set_deferred("disabled", true)
+		return
+	velocity.y = JUMP_VELOCITY
