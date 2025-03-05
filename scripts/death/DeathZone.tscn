@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dejq6tho78jiq" path="res://scripts/death/death_zone.gd" id="1_4j5ix"]
 
 [node name="DeathZone" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
 script = ExtResource("1_4j5ix")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

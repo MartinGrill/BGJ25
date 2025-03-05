@@ -51,4 +51,5 @@ func try_jump() -> void:
 	velocity.y = JUMP_VELOCITY
 	
 func handle_danger() -> void:
+	print("death!!!")
 	pass
