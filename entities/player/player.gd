@@ -4,6 +4,8 @@ signal hit
 @export var speed = 100 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 
+enum Element { Neutral, Fire, Water, Earth, Air }
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	#hide() #uncommend if start function is used to play
