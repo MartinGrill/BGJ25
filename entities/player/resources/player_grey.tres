@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://b7wryf3w4fega"]
+
+[ext_resource type="Texture2D" uid="uid://dp32xg7j8l3vn" path="res://entities/player/sprites/player_grey_1.png" id="1_odoqs"]
+[ext_resource type="Texture2D" uid="uid://daecf28y0a0go" path="res://entities/player/sprites/player_grey_2.png" id="2_scx7c"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_odoqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_scx7c")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
