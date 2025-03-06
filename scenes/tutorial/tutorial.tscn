@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bsjtgn1ctnyfe"]
+[gd_scene load_steps=14 format=4 uid="uid://bsjtgn1ctnyfe"]
 
 [ext_resource type="Script" uid="uid://cbo4wemg3pvau" path="res://scenes/tutorial/tutorial.gd" id="1_jaenq"]
 [ext_resource type="PackedScene" uid="uid://djnvb38vi6kjs" path="res://entities/player/Player.tscn" id="1_ymgc8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://edyank3gtfsx" path="res://entities/platform/platform.tscn" id="6_pq3l0"]
 [ext_resource type="PackedScene" uid="uid://bsb3p232rcpij" path="res://scripts/background/background.tscn" id="7_g7eoy"]
 [ext_resource type="PackedScene" uid="uid://xwjbtits0qn5" path="res://entities/orb/orb.tscn" id="8_ha56g"]
+[ext_resource type="PackedScene" uid="uid://cnqew4ivejuta" path="res://scenes/hud.tscn" id="9_4nriy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g40di"]
 size = Vector2(1415.5, 2.5)
@@ -24,6 +25,11 @@ size = Vector2(16, 18)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jaenq")
 next_level = "uid://btu8d01fpm2uf"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("9_4nriy")]
+position = Vector2(1000, 5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(1, 125)
