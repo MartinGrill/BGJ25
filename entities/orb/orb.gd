@@ -1,4 +1,4 @@
-extends Area2D
+class_name Orb extends Area2D
 
 enum OrbElement { Universal, Water, Fire, Air, Earth }
 @export var element: OrbElement
@@ -8,8 +8,6 @@ enum OrbElement { Universal, Water, Fire, Air, Earth }
 @onready var air = $Air
 @onready var earth = $Earth
 @onready var universal = $Universal
-
-signal add_orb(element: OrbElement)
 
 func _ready() -> void:	
 	match element:
@@ -21,4 +19,8 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is not Player: return
-	add_orb.emit(element)
+	
+	var player: Player = body
+	player.add_switch(element)
+	
+	self.queue_free()
