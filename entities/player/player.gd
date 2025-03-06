@@ -46,7 +46,7 @@ func try_jump() -> void:
 	velocity.y = JUMP_VELOCITY
 
 ## Element system (TODO)
-enum Element { Neutral, Fire, Water, Earth, Air }
+enum Element { Neutral, Water, Fire, Air, Earth }
 var current_element : Element
 
 func change_element(element: Element):
@@ -55,8 +55,14 @@ func change_element(element: Element):
 		Element.Neutral: load("res://entities/player/resources/player_neutral.tres")
 		Element.Water: sprite.sprite_frames = load("res://entities/player/resources/player_blue.tres")
 		Element.Fire: sprite.sprite_frames = load("res://entities/player/resources/player_red.tres")
-		Element.Earth: sprite.sprite_frames = load("res://entities/player/resources/player_green.tres")
 		Element.Air: sprite.sprite_frames = load("res://entities/player/resources/player_grey.tres")
+		Element.Earth: sprite.sprite_frames = load("res://entities/player/resources/player_green.tres")
 
 func _ready() -> void:
 		change_element(Element.Neutral)
+		
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("change_water"): change_element(Element.Water)
+	if Input.is_action_pressed("change_fire"): change_element(Element.Fire)
+	if Input.is_action_pressed("change_air"): change_element(Element.Air)
+	if Input.is_action_pressed("change_earth"): change_element(Element.Earth)
