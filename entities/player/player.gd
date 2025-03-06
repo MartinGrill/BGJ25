@@ -42,6 +42,11 @@ func _process(delta: float) -> void:
 		print("E pressed")
 	if Input.is_action_just_pressed("second_ability"):
 		print("F pressed")
+	if Input.is_action_pressed("change_water"): change_element(Element.Water)
+	if Input.is_action_pressed("change_fire"): change_element(Element.Fire)
+	if Input.is_action_pressed("change_air"): change_element(Element.Air)
+	if Input.is_action_pressed("change_earth"): change_element(Element.Earth)
+
 func try_jump() -> void:
 	if _double_jump_charged:
 		_double_jump_charged = false
@@ -67,7 +72,3 @@ func _ready() -> void:
 		change_element(Element.Neutral)
 		
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("change_water"): change_element(Element.Water)
-	if Input.is_action_pressed("change_fire"): change_element(Element.Fire)
-	if Input.is_action_pressed("change_air"): change_element(Element.Air)
-	if Input.is_action_pressed("change_earth"): change_element(Element.Earth)
