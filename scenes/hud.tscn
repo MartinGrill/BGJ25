@@ -1,14 +1,30 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnqew4ivejuta"]
+[gd_scene load_steps=14 format=3 uid="uid://cnqew4ivejuta"]
 
 [ext_resource type="Texture2D" uid="uid://u21e26sd3w2f" path="res://scenes/sprites/keyboard/1-Key.png" id="1_0i1j5"]
-[ext_resource type="Texture2D" uid="uid://7li47pwrpqa" path="res://entities/orb/sprites/33.png" id="2_mphia"]
+[ext_resource type="Texture2D" uid="uid://7li47pwrpqa" path="res://entities/orb/assets/33.png" id="2_mphia"]
 [ext_resource type="Texture2D" uid="uid://bnst4iqkxpp7c" path="res://scenes/sprites/keyboard/2-Key.png" id="3_0m4u7"]
-[ext_resource type="Texture2D" uid="uid://b3q2b0ybporpm" path="res://entities/orb/sprites/34.png" id="4_apjy4"]
+[ext_resource type="Texture2D" uid="uid://b3q2b0ybporpm" path="res://entities/orb/assets/34.png" id="4_apjy4"]
 [ext_resource type="Texture2D" uid="uid://wtbl1xw0j6g1" path="res://scenes/sprites/keyboard/3-Key.png" id="5_5n1hp"]
-[ext_resource type="Texture2D" uid="uid://de8cnusad375d" path="res://entities/orb/sprites/32.png" id="6_eld54"]
+[ext_resource type="Texture2D" uid="uid://de8cnusad375d" path="res://entities/orb/assets/32.png" id="6_eld54"]
 [ext_resource type="Texture2D" uid="uid://doybeyo3h1imp" path="res://scenes/sprites/keyboard/4-Key.png" id="7_3swnk"]
-[ext_resource type="Texture2D" uid="uid://bwdx6cjnvym0c" path="res://entities/orb/sprites/35.png" id="8_qkknv"]
-[ext_resource type="Texture2D" uid="uid://cq3w2fpi8s6cl" path="res://entities/orb/sprites/20.png" id="9_uxdf7"]
+[ext_resource type="Texture2D" uid="uid://bwdx6cjnvym0c" path="res://entities/orb/assets/35.png" id="8_qkknv"]
+[ext_resource type="Texture2D" uid="uid://cq3w2fpi8s6cl" path="res://entities/orb/assets/20.png" id="9_uxdf7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i1j5"]
+atlas = ExtResource("1_0i1j5")
+region = Rect2(0, 2, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mphia"]
+atlas = ExtResource("3_0m4u7")
+region = Rect2(0, 2, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m4u7"]
+atlas = ExtResource("5_5n1hp")
+region = Rect2(0, 2, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apjy4"]
+atlas = ExtResource("7_3swnk")
+region = Rect2(0, 2, 32, 32)
 
 [node name="Hud" type="Node2D"]
 
@@ -17,10 +33,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 columns = 3
 
-[node name="v1" type="Sprite2D" parent="GridContainer"]
-texture = ExtResource("1_0i1j5")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
+[node name="Key 1" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0i1j5")
+expand_mode = 2
 
 [node name="WaterPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -29,13 +45,13 @@ expand_mode = 2
 
 [node name="Water" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Water"
 
-[node name="2" type="Sprite2D" parent="GridContainer"]
-position = Vector2(-12, 31)
-texture = ExtResource("3_0m4u7")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
+[node name="Key 2" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_mphia")
+expand_mode = 2
 
 [node name="FirePic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -44,13 +60,13 @@ expand_mode = 2
 
 [node name="Fire" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Fire"
 
-[node name="3" type="Sprite2D" parent="GridContainer"]
-position = Vector2(-8, 61)
-texture = ExtResource("5_5n1hp")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
+[node name="Key 3" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0m4u7")
+expand_mode = 2
 
 [node name="AirPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -59,13 +75,13 @@ expand_mode = 2
 
 [node name="Air" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Air"
 
-[node name="4" type="Sprite2D" parent="GridContainer"]
-position = Vector2(-4, 88)
-texture = ExtResource("7_3swnk")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
+[node name="Key 4" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_apjy4")
+expand_mode = 2
 
 [node name="EarthPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -74,7 +90,12 @@ expand_mode = 2
 
 [node name="Earth" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Earth"
+
+[node name="Empty" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+expand_mode = 2
 
 [node name="UniversalPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -83,8 +104,5 @@ expand_mode = 2
 
 [node name="Universal" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Universal"
-
-[node name="1" type="TextureRect" parent="GridContainer"]
-layout_mode = 2
-texture = ExtResource("1_0i1j5")

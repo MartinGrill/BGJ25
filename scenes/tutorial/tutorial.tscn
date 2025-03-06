@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://edyank3gtfsx" path="res://entities/platform/platform.tscn" id="6_pq3l0"]
 [ext_resource type="PackedScene" uid="uid://bsb3p232rcpij" path="res://scripts/background/background.tscn" id="7_g7eoy"]
 [ext_resource type="PackedScene" uid="uid://xwjbtits0qn5" path="res://entities/orb/orb.tscn" id="8_ha56g"]
-[ext_resource type="AudioStream" uid="uid://b6l1yyb8isnwd" path="res://scenes/tutorial/assets/Ambient Music.wav" id="9_4nriy"]
+[ext_resource type="PackedScene" uid="uid://cnqew4ivejuta" path="res://scenes/hud.tscn" id="9_4nriy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g40di"]
 size = Vector2(1415.5, 2.5)
@@ -25,6 +25,11 @@ size = Vector2(16, 18)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jaenq")
 next_level = "uid://btu8d01fpm2uf"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("9_4nriy")]
+position = Vector2(1000, 5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(1, 125)
@@ -76,7 +81,6 @@ shape = SubResource("RectangleShape2D_g7eoy")
 position = Vector2(129, 98)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_4nriy")
 autoplay = true
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
