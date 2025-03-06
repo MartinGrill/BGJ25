@@ -37,6 +37,11 @@ func _physics_process(delta: float) -> void:
 	floor_stop_on_slope = not platform_detector.is_colliding()
 	move_and_slide()
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("first_ability"):
+		print("E pressed")
+	if Input.is_action_just_pressed("second_ability"):
+		print("F pressed")
 func try_jump() -> void:
 	if _double_jump_charged:
 		_double_jump_charged = false
