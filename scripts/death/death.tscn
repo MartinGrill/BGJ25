@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://cyw383v2olamx"]
 
-[ext_resource type="Script" uid="uid://dejq6tho78jiq" path="res://scripts/death/death_zone.gd" id="1_4j5ix"]
+[ext_resource type="Script" uid="uid://dejq6tho78jiq" path="res://scripts/death/death.gd" id="1_ib8o8"]
 
-[node name="DeathZone" type="Area2D"]
+[node name="death" type="Area2D"]
 collision_layer = 0
 collision_mask = 4
 monitorable = false
-script = ExtResource("1_4j5ix")
+script = ExtResource("1_ib8o8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

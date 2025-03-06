@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://fxin66snp468"]
+
+[ext_resource type="Script" uid="uid://c6edvh7rlvv2" path="res://scripts/win/win.gd" id="1_k3yje"]
+
+[node name="Win" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_k3yje")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

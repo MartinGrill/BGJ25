@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi5mmon08upoc"
-path="res://.godot/imported/slime_green.png-faeb2f67c6df55e86eb065fba9954efa.ctex"
+uid="uid://dc5maql2axy5v"
+path="res://.godot/imported/coin.png-f9ba7302d332ece7a688756159bc8196.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/assets/sprites/slime_green.png"
-dest_files=["res://.godot/imported/slime_green.png-faeb2f67c6df55e86eb065fba9954efa.ctex"]
+source_file="res://scenes/sprites/coin.png"
+dest_files=["res://.godot/imported/coin.png-f9ba7302d332ece7a688756159bc8196.ctex"]
 
 [params]
 

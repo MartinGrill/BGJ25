@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl4xlggxg5rgd"
-path="res://.godot/imported/knight.png-41d5754605f66a6665a604239d527617.ctex"
+uid="uid://w1d6y6wsreal"
+path="res://.godot/imported/world_tileset.png-61979d255ef1319f23800055dda3ad40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/assets/sprites/knight.png"
-dest_files=["res://.godot/imported/knight.png-41d5754605f66a6665a604239d527617.ctex"]
+source_file="res://scenes/sprites/world_tileset.png"
+dest_files=["res://.godot/imported/world_tileset.png-61979d255ef1319f23800055dda3ad40.ctex"]
 
 [params]
 
