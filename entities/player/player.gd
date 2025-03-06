@@ -128,14 +128,13 @@ func _change_element_prime(element: Element):
 func _ready() -> void:
 		_change_element_prime(Element.Neutral)
 		
-func add_switch(element: Orb.OrbElement) -> void:
+func add_switch(element: Orb.Element) -> void:
 	match element:
-		Orb.OrbElement.Universal: switches.set("universal", switches.get("universal") + 1)
-		Orb.OrbElement.Water: switches.set("water", switches.get("water") + 1)
-		Orb.OrbElement.Fire: switches.set("fire", switches.get("fire") + 1)
-		Orb.OrbElement.Air: switches.set("air", switches.get("air") + 1)
-		Orb.OrbElement.Earth: switches.set("earth", switches.get("earth") + 1)
-	print(switches)
+		Orb.Element.Universal: switches.set("universal", switches.get("universal") + 1)
+		Orb.Element.Water: switches.set("water", switches.get("water") + 1)
+		Orb.Element.Fire: switches.set("fire", switches.get("fire") + 1)
+		Orb.Element.Air: switches.set("air", switches.get("air") + 1)
+		Orb.Element.Earth: switches.set("earth", switches.get("earth") + 1)
 		
 func connectSignalsVine(vine):
 	vine.body_entered.connect(_on_vine_entered)
