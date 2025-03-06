@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://bsjtgn1ctnyfe"]
+[gd_scene load_steps=15 format=4 uid="uid://bsjtgn1ctnyfe"]
 
-[ext_resource type="Script" uid="uid://cbo4wemg3pvau" path="res://scenes/tutorial/tutorial.gd" id="1_jaenq"]
+[ext_resource type="Script" uid="uid://cbo4wemg3pvau" path="res://scenes/levels/level0/tutorial.gd" id="1_jaenq"]
 [ext_resource type="PackedScene" uid="uid://djnvb38vi6kjs" path="res://entities/player/Player.tscn" id="1_ymgc8"]
 [ext_resource type="TileSet" uid="uid://c73qgjf1001x0" path="res://scenes/resources/level_tiles.tres" id="3_bmltb"]
 [ext_resource type="PackedScene" uid="uid://cyw383v2olamx" path="res://scripts/death/death.tscn" id="4_g40di"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bsb3p232rcpij" path="res://scripts/background/background.tscn" id="7_g7eoy"]
 [ext_resource type="PackedScene" uid="uid://xwjbtits0qn5" path="res://entities/orb/orb.tscn" id="8_ha56g"]
 [ext_resource type="PackedScene" uid="uid://cnqew4ivejuta" path="res://scenes/hud.tscn" id="9_4nriy"]
+[ext_resource type="AudioStream" uid="uid://b6l1yyb8isnwd" path="res://scenes/levels/level0/assets/Ambient Music.wav" id="10_hsofu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g40di"]
 size = Vector2(1415.5, 2.5)
@@ -81,6 +82,7 @@ shape = SubResource("RectangleShape2D_g7eoy")
 position = Vector2(129, 98)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_hsofu")
 autoplay = true
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
