@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BGJ25"
-run/main_scene="uid://bsjtgn1ctnyfe"
+run/main_scene="uid://ckshiowikpxhq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,7 +26,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/wakatime/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
