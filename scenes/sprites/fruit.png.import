@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc5maql2axy5v"
-path="res://.godot/imported/coin.png-db8f83e5849d0f894fe399853c86946e.ctex"
+uid="uid://b7145qer8vvch"
+path="res://.godot/imported/fruit.png-e4b952c2c518dedcedaf51b55456d048.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/assets/sprites/coin.png"
-dest_files=["res://.godot/imported/coin.png-db8f83e5849d0f894fe399853c86946e.ctex"]
+source_file="res://scenes/sprites/fruit.png"
+dest_files=["res://.godot/imported/fruit.png-e4b952c2c518dedcedaf51b55456d048.ctex"]
 
 [params]
 
