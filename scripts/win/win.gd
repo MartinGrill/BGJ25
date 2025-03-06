@@ -8,8 +8,6 @@ func _on_body_entered(body: Node2D) -> void:
 		body.get_node("CollisionShape2D").queue_free()
 		timer.start()
 
-
-
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1
 	var level : Level = get_tree().current_scene

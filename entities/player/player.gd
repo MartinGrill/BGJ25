@@ -11,9 +11,14 @@ var can_control : bool = true
 var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var platform_detector := $PlatformDetector as RayCast2D
 
-#Player
+## Element system (TODO)
+enum Element { Nothing, Fire, Water, Earth, Air }
+var current_element : Element
+
 var _double_jump_charged := false
 
+func _ready() -> void:
+	current_element = Element.Nothing
 
 func _physics_process(delta: float) -> void:
 	if not can_control: return
@@ -29,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
 
 	var direction := Input.get_axis("move_left", "move_right") * WALK_SPEED
-	#velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
+	# velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
 	velocity.x = direction * delta
 
 	if not is_zero_approx(velocity.x):
@@ -49,7 +54,3 @@ func try_jump() -> void:
 	else:
 		return
 	velocity.y = JUMP_VELOCITY
-	
-func handle_danger() -> void:
-	print("death!!!")
-	pass
