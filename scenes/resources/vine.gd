@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 			continue
 		var player: Player = body
 	 
-		if Input.is_action_pressed("first_ability") and player.current_element == Player.Element.Water:
+		if Input.is_action_pressed("first_ability") and player.current_element == Player.Element.Earth:
 			time_elapsed += delta
 			var newSize = int(time_elapsed) + size
 			if	newSize > size:
