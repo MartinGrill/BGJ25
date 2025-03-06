@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ckshiowikpxhq"]
 
 [ext_resource type="Script" uid="uid://bs5g7m2dybo2l" path="res://scenes/main_menu/main_menu.gd" id="1_0ebjn"]
-[ext_resource type="Texture2D" uid="uid://bedg2vdo0fc7e" path="res://scenes/main_menu/GameJam_Hintergrund_MainMenu.png" id="1_nl8w3"]
+[ext_resource type="Texture2D" uid="uid://bedg2vdo0fc7e" path="res://scenes/sprites/main_menu_background.png" id="1_nl8w3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3rkf3"]
 texture = ExtResource("1_nl8w3")
