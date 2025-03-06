@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://l078xuslmm6u"]
+
+[ext_resource type="TileSet" uid="uid://c73qgjf1001x0" path="res://scenes/resources/level_tiles.tres" id="1_lanlw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4tg7"]
+size = Vector2(16, 16)
+
+[node name="Vine" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_w4tg7")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 8, 0, 0, 0)
+tile_set = ExtResource("1_lanlw")
