@@ -28,6 +28,7 @@ tile_set = ExtResource("3_bmltb")
 
 [node name="Death" parent="." instance=ExtResource("4_g40di")]
 position = Vector2(74, 246)
+is_lava = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Death"]
 position = Vector2(184.5, -6)

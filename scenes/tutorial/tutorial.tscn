@@ -37,6 +37,7 @@ collision_mask = 7
 
 [node name="Death" parent="." instance=ExtResource("4_g40di")]
 collision_layer = 4
+monitorable = true
 
 [node name="Void" type="CollisionShape2D" parent="Death"]
 position = Vector2(77, 231.75)
@@ -44,6 +45,7 @@ shape = SubResource("RectangleShape2D_g40di")
 
 [node name="LavaDeath" parent="." instance=ExtResource("4_g40di")]
 collision_layer = 4
+monitorable = true
 is_lava = true
 
 [node name="Lava" type="CollisionShape2D" parent="LavaDeath"]
