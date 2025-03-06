@@ -14,6 +14,8 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 var _double_jump_charged := false
 var is_climbing := false
 
+
+
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		_double_jump_charged = true
