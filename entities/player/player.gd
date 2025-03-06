@@ -13,6 +13,7 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 
 var _double_jump_charged := false
 var is_climbing := false
+var vine_entered := false
 
 var switches = {
 	"water": 0,
@@ -33,21 +34,20 @@ func _physics_process(delta: float) -> void:
 	
 	#climbing
 	var directionVertical = Input.get_axis("move_down", "move_up")
-	#if directionVertical != 0:
-		## check if collsionshape 
-		#var bodies = player.get_overlapping_bodies()
-		#if "Vine" in bodies:
-			#is_climbing = true
-		#else:
-			#is_climbing = false
-	#else:
-		#is_climbing = false
+	if directionVertical != 0:
+		# check if collsionshape 
+		if vine_entered:
+			is_climbing = true
+		else:
+			is_climbing = false
+	else:
+		is_climbing = false
 	
 	if not is_climbing:
 		# Fall.
 		velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
 	else:
-		velocity.y = JUMP_VELOCITY * delta * directionVertical
+		velocity.y = JUMP_VELOCITY * delta * directionVertical * 20
 	
 	var direction := Input.get_axis("move_left", "move_right") * WALK_SPEED
 	velocity.x = direction * delta
@@ -141,3 +141,12 @@ func add_switch(element: Orb.OrbElement) -> void:
 		Orb.OrbElement.Earth: switches.set("earth", switches.get("earth") + 1)
 	print(switches)
 		
+func connectSignalsVine(vine):
+	vine.body_entered.connect(_on_vine_entered)
+	vine.body_exited.connect(_on_vine_exited)
+
+func _on_vine_entered(body):
+	vine_entered = true
+
+func _on_vine_exited(body):
+	vine_entered = false

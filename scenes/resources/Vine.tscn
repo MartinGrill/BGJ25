@@ -1,11 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://daoj03yowyefs"]
 
 [ext_resource type="TileSet" uid="uid://c73qgjf1001x0" path="res://scenes/resources/level_tiles.tres" id="1_lanlw"]
+[ext_resource type="Script" uid="uid://b1cy5g6h52rl7" path="res://scenes/resources/vine.gd" id="1_yeksb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4tg7"]
 size = Vector2(16, 16)
 
 [node name="Vine" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_yeksb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
