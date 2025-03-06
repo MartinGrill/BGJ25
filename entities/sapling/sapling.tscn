@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf536fabufto6"]
+
+[ext_resource type="TileSet" uid="uid://c73qgjf1001x0" path="res://scenes/resources/level_tiles.tres" id="1_nq87d"]
+[ext_resource type="Script" uid="uid://b3to8o3eygkww" path="res://entities/sapling/sapling.gd" id="1_un6pu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7eoy"]
+size = Vector2(16, 16)
+
+[node name="Sapling" type="Area2D"]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_un6pu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_g7eoy")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_nq87d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -13,7 +13,7 @@ enum OrbElement { Universal, Water, Fire, Air, Earth }
 
 var can_interact := true
 
-func _ready() -> void:	
+func _ready() -> void:
 	match element:
 		OrbElement.Universal: universal.visible = true
 		OrbElement.Water: water.visible = true

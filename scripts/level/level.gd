@@ -8,7 +8,7 @@ class_name Level extends Node
 
 
 func _process(delta: float) -> void:
-	if get_node_or_null("Sapling"): sapling_logic()
+	if self.get_children().any(isSapling): sapling_logic()
 	
 	if p.current_element == Player.Element.Water and Input.is_action_just_pressed("first_ability"):
 		makeWaterToIce()
@@ -33,23 +33,25 @@ func makeWaterToIce() -> void:
 
 
 func sapling_logic() -> void:
-	var bodies = $Sapling.get_overlapping_bodies()
-	for body in bodies:
-		if isPlayer(body):
-			if Input.is_action_pressed("first_ability") and p.current_element == Player.Element.Earth:
-				var pos = $Sapling.get_child(0).global_position
-				var title_coords = tilemap.local_to_map(tilemap.to_local(pos))
-				# remove sapling
-				remove_child($Sapling)
-				tilemap.set_cell(title_coords, -1, Vector2i(-1, -1))
-				
-				var vine_scene = preload("res://scenes/resources/Vine.tscn")
-				var vine = vine_scene.instantiate()
-				p.connectSignalsVine(vine)
-				vine.position = pos
-				vine.position.x -= 7
-				vine.position.y -= 6
-				add_child(vine)
+	for body in self.get_children():
+		if isSapling(body):
+			var sap: Sapling = body
+			if sap.player_in_range:
+				if Input.is_action_pressed("first_ability") and p.current_element == Player.Element.Earth:
+					var pos = sap.global_position
+					var title_coords = tilemap.local_to_map(tilemap.to_local(pos))
+					# remove sapling
+					remove_child(sap)
+					tilemap.set_cell(title_coords, -1, Vector2i(-1, -1))
+					
+					var vine_scene = preload("res://scenes/resources/Vine.tscn")
+					var vine = vine_scene.instantiate()
+					p.connectSignalsVine(vine)
+					vine.position = pos
+					add_child(vine)
+					
 
 func isPlayer(body):
 	return body is Player
+func isSapling(body):
+	return body is Sapling
