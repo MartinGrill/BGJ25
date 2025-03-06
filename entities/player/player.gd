@@ -70,5 +70,3 @@ func change_element(element: Element):
 
 func _ready() -> void:
 		change_element(Element.Neutral)
-		
-func _process(delta: float) -> void:
