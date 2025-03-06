@@ -16,18 +16,11 @@ func _process(delta: float) -> void:
 			time_elapsed += delta
 			var newSize = int(time_elapsed) + size
 			if	newSize > size:
-				#print(colShape.position)
-				#colShape.position.y -= 8
 				var shape = RectangleShape2D.new()
 				shape.size = colShape.shape.size
-				print(colShape.shape.size)
-				#shape.size = Vector2(colShape.shape.x, colShape.shape.y -16)
 				shape.size = Vector2(16, 32 * (size+1))
-				print(shape.size)
-				#shape.size.y -= 16
 				colShape.set_shape(shape)
 				
-				#print(colShape.position)
 				time_elapsed -= 1
 				size = newSize
 				tilemap.set_cell(Vector2i(0, size * -1), 0, Vector2i(2, 8))
