@@ -31,13 +31,15 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right") * WALK_SPEED
 	#velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
 	velocity.x = direction * delta
-
-	if not is_zero_approx(velocity.x):
-		if velocity.x < 0:
-			$AnimatedSprite2D.flip_h = true
-		else:
-			$AnimatedSprite2D.flip_h = false
-
+	
+	if velocity.x != 0:
+		$AnimatedSprite2D.play()
+		$AnimatedSprite2D.animation = "walk"
+		# See the note below about the following boolean assignment.
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+	else:
+		$AnimatedSprite2D.stop()
+	
 	floor_stop_on_slope = not platform_detector.is_colliding()
 	move_and_slide()
 
