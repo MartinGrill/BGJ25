@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-@onready var start_level = preload("res://scenes/tutorial/tutorial.tscn") as PackedScene
+@onready var start_level = preload("res://scenes/levels/level0/tutorial.tscn") as PackedScene
 @onready var audio_player := $AudioStreamPlayer
 
 func _on_button_start_pressed() -> void:
