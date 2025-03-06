@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://xwjbtits0qn5"]
 
 [ext_resource type="Script" uid="uid://ci8ggbgu8f1tt" path="res://entities/orb/orb.gd" id="1_h8qx5"]
-[ext_resource type="Texture2D" uid="uid://qe26r216g5oi" path="res://entities/orb/assets/23.png" id="2_h8qx5"]
-[ext_resource type="Texture2D" uid="uid://uugqv884amf7" path="res://entities/orb/assets/24.png" id="3_ljrly"]
-[ext_resource type="Texture2D" uid="uid://c22moi4xdsy5t" path="res://entities/orb/assets/4.png" id="4_qampi"]
-[ext_resource type="Texture2D" uid="uid://rfun2vdxuaac" path="res://entities/orb/assets/12.png" id="5_cutij"]
-[ext_resource type="Texture2D" uid="uid://d1ua4la0i1y2h" path="res://entities/orb/assets/29.png" id="6_3337n"]
+[ext_resource type="Texture2D" uid="uid://7li47pwrpqa" path="res://entities/orb/assets/33.png" id="2_qampi"]
+[ext_resource type="Texture2D" uid="uid://b3q2b0ybporpm" path="res://entities/orb/assets/34.png" id="3_cutij"]
+[ext_resource type="Texture2D" uid="uid://de8cnusad375d" path="res://entities/orb/assets/32.png" id="4_3337n"]
+[ext_resource type="Texture2D" uid="uid://bwdx6cjnvym0c" path="res://entities/orb/assets/35.png" id="5_yqh0o"]
+[ext_resource type="Texture2D" uid="uid://cq3w2fpi8s6cl" path="res://entities/orb/assets/20.png" id="6_e34t8"]
 [ext_resource type="AudioStream" uid="uid://b0p2vpufv3vj0" path="res://entities/orb/assets/sfx_coin_double7.wav" id="7_qampi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8qx5"]
@@ -21,27 +21,27 @@ shape = SubResource("RectangleShape2D_h8qx5")
 
 [node name="Water" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_h8qx5")
+texture = ExtResource("2_qampi")
 region_rect = Rect2(0, 48, 16, 16)
 
 [node name="Fire" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("3_ljrly")
+texture = ExtResource("3_cutij")
 region_rect = Rect2(0, 32, 16, 16)
 
 [node name="Air" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("4_qampi")
+texture = ExtResource("4_3337n")
 region_rect = Rect2(0, 16, 16, 16)
 
 [node name="Earth" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("5_cutij")
+texture = ExtResource("5_yqh0o")
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Universal" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("6_3337n")
+texture = ExtResource("6_e34t8")
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
