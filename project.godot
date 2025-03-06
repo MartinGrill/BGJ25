@@ -15,6 +15,10 @@ run/main_scene="uid://bsjtgn1ctnyfe"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -93,3 +97,7 @@ second_ability={
 2d_physics/layer_3="player"
 2d_physics/layer_4="enemies"
 2d_physics/layer_5="collectibles"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

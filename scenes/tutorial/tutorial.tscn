@@ -10,7 +10,7 @@
 size = Vector2(1179, 2.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r23bs"]
-size = Vector2(113, 5)
+size = Vector2(113, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq3l0"]
 size = Vector2(29, 17)
@@ -43,7 +43,7 @@ collision_layer = 4
 is_lava = true
 
 [node name="Lava" type="CollisionShape2D" parent="LavaDeath"]
-position = Vector2(408, 147)
+position = Vector2(408, 136.75)
 shape = SubResource("RectangleShape2D_r23bs")
 
 [node name="Win" parent="." instance=ExtResource("5_r23bs")]
