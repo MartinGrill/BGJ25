@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://fxin66snp468"]
+[gd_scene load_steps=6 format=3 uid="uid://fxin66snp468"]
 
 [ext_resource type="Script" uid="uid://c6edvh7rlvv2" path="res://scripts/win/win.gd" id="1_k3yje"]
 
-[sub_resource type="Animation" id="Animation_pl26e"]
+[sub_resource type="Animation" id="Animation_muv2o"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -17,8 +17,12 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ib8o8"]
-resource_name = "fade_to_black"
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_py6te"]
+_data = {
+&"RESET": SubResource("Animation_muv2o")
+}
+
+[sub_resource type="Animation" id="Animation_k3yje"]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -33,10 +37,9 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwt8u"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_muv2o"]
 _data = {
-&"RESET": SubResource("Animation_pl26e"),
-&"fade_to_black": SubResource("Animation_ib8o8")
+&"fade_to_white": SubResource("Animation_k3yje")
 }
 
 [node name="Win" type="Area2D"]
@@ -57,7 +60,8 @@ grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
-&"": SubResource("AnimationLibrary_pwt8u")
+&"": SubResource("AnimationLibrary_py6te"),
+&"win": SubResource("AnimationLibrary_muv2o")
 }
 
 [node name="Timer" type="Timer" parent="."]
