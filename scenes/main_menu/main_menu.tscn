@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckshiowikpxhq"]
+[gd_scene load_steps=9 format=3 uid="uid://ckshiowikpxhq"]
 
 [ext_resource type="Script" uid="uid://bs5g7m2dybo2l" path="res://scenes/main_menu/main_menu.gd" id="1_0ebjn"]
-[ext_resource type="Texture2D" uid="uid://bedg2vdo0fc7e" path="res://scenes/sprites/main_menu_background.png" id="1_nl8w3"]
+[ext_resource type="Texture2D" uid="uid://bhykhj0e3hnd3" path="res://scenes/sprites/main_menu_background.png" id="1_nl8w3"]
+[ext_resource type="AudioStream" uid="uid://ca5agrih4gtud" path="res://scenes/main_menu/assets/song18.mp3" id="3_ob46e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3rkf3"]
 texture = ExtResource("1_nl8w3")
@@ -137,6 +138,10 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 16
 text = "by GameSchmankerl Studios"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ob46e")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_options_pressed"]
