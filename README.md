@@ -1,4 +1,6 @@
-# Beginner Game Jam '25 – Team Gameschmankerl Studios
+# ElemenTUM
+
+Beginner Game Jam 2025 entry by Gameschmankerl Studios
 
 ## Credits
 
