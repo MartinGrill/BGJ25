@@ -1,11 +1,18 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
+@onready var color_rect = $CanvasLayer/ColorRect
+@onready var animation_player = $CanvasLayer/AnimationPlayer
+
+func _ready() -> void:
+	color_rect.visible = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		Engine.time_scale = 0.5
-		body.get_node("CollisionShape2D").queue_free()
+		color_rect.visible = true
+		animation_player.play("fade_to_black")
+		# body.get_node("CollisionShape2D").queue_free()
 		timer.start()
 
 func _on_timer_timeout() -> void:

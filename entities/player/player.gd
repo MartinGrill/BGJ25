@@ -10,14 +10,10 @@ var can_control : bool = true
 var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var platform_detector := $PlatformDetector as RayCast2D
 
-## Element system (TODO)
-enum Element { Nothing, Fire, Water, Earth, Air }
-var current_element : Element
-
 var _double_jump_charged := false
 
 func _ready() -> void:
-	current_element = Element.Nothing
+	self.current_element = Element.Nothing
 
 func _physics_process(delta: float) -> void:
 	if not can_control: return
@@ -46,7 +42,6 @@ func _physics_process(delta: float) -> void:
 	floor_stop_on_slope = not platform_detector.is_colliding()
 	move_and_slide()
 
-
 func try_jump() -> void:
 	if _double_jump_charged:
 		_double_jump_charged = false
@@ -54,3 +49,11 @@ func try_jump() -> void:
 	else:
 		return
 	velocity.y = JUMP_VELOCITY
+
+## Element system (TODO)
+enum Element { Nothing, Fire, Water, Earth, Air }
+var current_element : Element
+
+func change_element(element: Element):
+	self.current_element = element
+	
