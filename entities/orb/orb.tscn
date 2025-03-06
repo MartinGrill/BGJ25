@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://xwjbtits0qn5"]
+[gd_scene load_steps=8 format=3 uid="uid://xwjbtits0qn5"]
 
-[ext_resource type="Texture2D" uid="uid://b7145qer8vvch" path="res://scenes/sprites/fruit.png" id="1_4ogyp"]
 [ext_resource type="Script" uid="uid://ci8ggbgu8f1tt" path="res://entities/orb/orb.gd" id="1_h8qx5"]
+[ext_resource type="Texture2D" uid="uid://qe26r216g5oi" path="res://entities/orb/sprites/23.png" id="2_h8qx5"]
+[ext_resource type="Texture2D" uid="uid://uugqv884amf7" path="res://entities/orb/sprites/24.png" id="3_ljrly"]
+[ext_resource type="Texture2D" uid="uid://c22moi4xdsy5t" path="res://entities/orb/sprites/4.png" id="4_qampi"]
+[ext_resource type="Texture2D" uid="uid://rfun2vdxuaac" path="res://entities/orb/sprites/12.png" id="5_cutij"]
+[ext_resource type="Texture2D" uid="uid://d1ua4la0i1y2h" path="res://entities/orb/sprites/29.png" id="6_3337n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8qx5"]
 size = Vector2(15, 15)
@@ -12,9 +16,29 @@ script = ExtResource("1_h8qx5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_h8qx5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4ogyp")
-region_enabled = true
+[node name="Water" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_h8qx5")
 region_rect = Rect2(0, 48, 16, 16)
+
+[node name="Fire" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_ljrly")
+region_rect = Rect2(0, 32, 16, 16)
+
+[node name="Air" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_qampi")
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="Earth" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_cutij")
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Universal" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_3337n")
+region_rect = Rect2(0, 0, 16, 16)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
