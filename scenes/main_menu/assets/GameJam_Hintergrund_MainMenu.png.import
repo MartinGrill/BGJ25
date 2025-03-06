@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rwoakypbiqnr"
-path="res://.godot/imported/GameJam_Hintergrund_MainMenu.png-bb0d49c783bcf194c1004e0d58423463.ctex"
+path="res://.godot/imported/GameJam_Hintergrund_MainMenu.png-52581227f5bbc82241e983d82f6cabc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/main_menu/GameJam_Hintergrund_MainMenu.png"
-dest_files=["res://.godot/imported/GameJam_Hintergrund_MainMenu.png-bb0d49c783bcf194c1004e0d58423463.ctex"]
+source_file="res://scenes/main_menu/assets/GameJam_Hintergrund_MainMenu.png"
+dest_files=["res://.godot/imported/GameJam_Hintergrund_MainMenu.png-52581227f5bbc82241e983d82f6cabc4.ctex"]
 
 [params]
 
