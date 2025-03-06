@@ -146,3 +146,4 @@ autoplay = true
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_exit_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
