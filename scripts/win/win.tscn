@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://fxin66snp468"]
+[gd_scene load_steps=7 format=3 uid="uid://fxin66snp468"]
 
 [ext_resource type="Script" uid="uid://c6edvh7rlvv2" path="res://scripts/win/win.gd" id="1_k3yje"]
+[ext_resource type="AudioStream" uid="uid://buuwly8anehlv" path="res://scripts/win/assets/sfx_sounds_fanfare3.wav" id="2_muv2o"]
 
 [sub_resource type="Animation" id="Animation_muv2o"]
 length = 0.001
@@ -66,6 +67,9 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_muv2o")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

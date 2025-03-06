@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://djnvb38vi6kjs"]
+[gd_scene load_steps=5 format=3 uid="uid://djnvb38vi6kjs"]
 
 [ext_resource type="Script" uid="uid://d3l3jee8l2033" path="res://entities/player/player.gd" id="1_g3lhm"]
-[ext_resource type="SpriteFrames" uid="uid://rrpl34xdbvdg" path="res://entities/player/resources/player_neutral.tres" id="2_453mm"]
+[ext_resource type="SpriteFrames" uid="uid://rrpl34xdbvdg" path="res://entities/player/assets/player_neutral.tres" id="2_453mm"]
+[ext_resource type="AudioStream" uid="uid://s57or71fm1p3" path="res://entities/player/assets/jump.wav" id="3_l3c03"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eaotn"]
 radius = 27.0
@@ -28,3 +29,7 @@ position_smoothing_enabled = true
 
 [node name="PlatformDetector" type="RayCast2D" parent="."]
 target_position = Vector2(0, 6)
+
+[node name="JumpPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_l3c03")
+volume_db = -10.0

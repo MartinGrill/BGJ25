@@ -3,11 +3,15 @@ class_name Orb extends Area2D
 enum OrbElement { Universal, Water, Fire, Air, Earth }
 @export var element: OrbElement
 
-@onready var water = $Water
-@onready var fire = $Fire
-@onready var air = $Air
-@onready var earth = $Earth
-@onready var universal = $Universal
+@onready var water := $Water
+@onready var fire := $Fire
+@onready var air := $Air
+@onready var earth := $Earth
+@onready var universal := $Universal
+
+@onready var audio_player := $AudioStreamPlayer
+
+var can_interact := true
 
 func _ready() -> void:	
 	match element:
@@ -18,9 +22,12 @@ func _ready() -> void:
 		OrbElement.Earth: earth.visible = true
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is not Player: return
+	if body is not Player or can_interact == false: return
 	
 	var player: Player = body
 	player.add_switch(element)
+		
+	audio_player.play()
 	
-	self.queue_free()
+	can_interact = false
+	self.visible = false

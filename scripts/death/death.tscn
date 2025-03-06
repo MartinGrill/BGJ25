@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyw383v2olamx"]
+[gd_scene load_steps=8 format=3 uid="uid://cyw383v2olamx"]
 
 [ext_resource type="Script" uid="uid://dejq6tho78jiq" path="res://scripts/death/death.gd" id="1_ib8o8"]
+[ext_resource type="AudioStream" uid="uid://deumhpaxmfdtb" path="res://scripts/death/assets/sfx_deathscream_human2.wav" id="2_pl26e"]
 
 [sub_resource type="Animation" id="Animation_pl26e"]
 length = 0.001
@@ -84,6 +85,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_pwt8u"),
 &"death": SubResource("AnimationLibrary_qg216")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pl26e")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

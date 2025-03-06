@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://ccnw1xgdcppok"]
+
+[ext_resource type="Texture2D" uid="uid://bmymhd3c21jol" path="res://entities/player/assets/player_green_1.png" id="1_bykry"]
+[ext_resource type="Texture2D" uid="uid://di4dsmkr3ltvb" path="res://entities/player/assets/player_green_2.png" id="2_231gi"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bykry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_231gi")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
