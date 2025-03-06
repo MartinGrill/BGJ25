@@ -9,12 +9,18 @@ const TERMINAL_VELOCITY = 300
 var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var platform_detector := $PlatformDetector as RayCast2D
 @onready var sprite := $AnimatedSprite2D
-@onready var player = $CharacterBody2D
+@onready var audio_player := $JumpPlayer
 
 var _double_jump_charged := false
 var is_climbing := false
 
-
+var switches = {
+	"water": 0,
+	"fire": 0,
+	"air": 0,
+	"earth": 0,
+	"universal": 0
+}
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
@@ -68,8 +74,10 @@ func _process(delta: float) -> void:
 
 func try_jump() -> void:
 	if is_on_floor():
+		audio_player.play()
 		pass
 	elif _double_jump_charged and current_element == Element.Air:
+		audio_player.play()
 		_double_jump_charged = false
 		velocity.x *= 2.5
 	else:
@@ -80,14 +88,56 @@ func try_jump() -> void:
 enum Element { Neutral, Water, Fire, Air, Earth }
 var current_element : Element
 
-func change_element(element: Element):
+func change_element(element: Element):	
+	match element:
+		Element.Water:
+			if(switches.get("water") >= 1):
+				switches.set("water", switches.get("water")-1)
+				_change_element_prime(element)
+				return
+		Element.Fire:
+			if(switches.get("fire") >= 1):
+				switches.set("fire", switches.get("fire")-1)
+				_change_element_prime(element)
+				return
+		Element.Air:
+			if(switches.get("air") >= 1):
+				switches.set("air", switches.get("air")-1)
+				_change_element_prime(element)
+				return
+		Element.Earth:
+			if(switches.get("earth") >= 1):
+				switches.set("earth", switches.get("earth")-1)
+				_change_element_prime(element)
+				return
+		Element.Neutral:
+			printerr("Can't change to neutral")
+		
+	if(switches.get("universal") >= 1):
+		var n = switches.get("universal")
+		switches.set("universal", n-1)
+		_change_element_prime(element)
+		return
+	
+	
+func _change_element_prime(element: Element):
 	self.current_element = element
 	match element:
-		Element.Neutral: load("res://entities/player/resources/player_neutral.tres")
-		Element.Water: sprite.sprite_frames = load("res://entities/player/resources/player_blue.tres")
-		Element.Fire: sprite.sprite_frames = load("res://entities/player/resources/player_red.tres")
-		Element.Air: sprite.sprite_frames = load("res://entities/player/resources/player_grey.tres")
-		Element.Earth: sprite.sprite_frames = load("res://entities/player/resources/player_green.tres")
+		Element.Water: sprite.sprite_frames = load("res://entities/player/assets/player_blue.tres")
+		Element.Fire: sprite.sprite_frames = load("res://entities/player/assets/player_red.tres")
+		Element.Air: sprite.sprite_frames = load("res://entities/player/assets/player_grey.tres")
+		Element.Earth: sprite.sprite_frames = load("res://entities/player/assets/player_green.tres")
+		Element.Neutral: sprite.sprite_frames = load("res://entities/player/assets/player_neutral.tres")
 
 func _ready() -> void:
-		change_element(Element.Neutral)
+		_change_element_prime(Element.Neutral)
+		
+func add_switch(element: Orb.OrbElement) -> void:
+	match element:
+		Orb.OrbElement.Universal: switches.set("universal", switches.get("universal") + 1)
+		Orb.OrbElement.Water: switches.set("water", switches.get("water") + 1)
+		Orb.OrbElement.Fire: switches.set("fire", switches.get("fire") + 1)
+		Orb.OrbElement.Air: switches.set("air", switches.get("air") + 1)
+		Orb.OrbElement.Earth: switches.set("earth", switches.get("earth") + 1)
+	print(switches)
+		

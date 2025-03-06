@@ -6,3 +6,4 @@
 - [Tileset](https://brackeysgames.itch.io/brackeys-platformer-bundle)
 - [Background](https://anokolisa.itch.io/basic-140-tiles-grassland-and-mines)
 - [Sprites](https://alifdoll.itch.io/rocks-and-gems)
+- [Main Menu Music](https://opengameart.org/content/crystal-cave-song18)

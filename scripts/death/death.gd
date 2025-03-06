@@ -3,6 +3,7 @@ extends Area2D
 @onready var timer = $Timer
 @onready var color_rect = $CanvasLayer/ColorRect
 @onready var animation_player = $CanvasLayer/AnimationPlayer
+@onready var audio_player = $AudioStreamPlayer
 
 @export var is_lava: bool
 
@@ -20,6 +21,7 @@ func _process(delta: float) -> void:
 		Engine.time_scale = 0.5
 		color_rect.visible = true
 		animation_player.play("death/fade_to_black")
+		audio_player.play()
 		dead = true
 		
 		timer.start()
