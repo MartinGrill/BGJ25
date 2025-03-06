@@ -22,7 +22,8 @@ animation = &"walk"
 shape = SubResource("CapsuleShape2D_eaotn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+position = Vector2(0, -30)
+zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 
 [node name="PlatformDetector" type="RayCast2D" parent="."]

@@ -14,8 +14,8 @@ size = Vector2(29, 17)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_opnpg")
-player = NodePath("Player")
 next_level = null
+player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("1_ymgc8")]
 position = Vector2(42, 154)

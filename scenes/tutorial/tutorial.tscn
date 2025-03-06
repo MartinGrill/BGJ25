@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bsjtgn1ctnyfe"]
+[gd_scene load_steps=12 format=4 uid="uid://bsjtgn1ctnyfe"]
 
 [ext_resource type="Script" uid="uid://cbo4wemg3pvau" path="res://scenes/tutorial/tutorial.gd" id="1_jaenq"]
 [ext_resource type="PackedScene" uid="uid://djnvb38vi6kjs" path="res://entities/player/Player.tscn" id="1_ymgc8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cyw383v2olamx" path="res://scripts/death/death.tscn" id="4_g40di"]
 [ext_resource type="PackedScene" uid="uid://fxin66snp468" path="res://scripts/win/win.tscn" id="5_r23bs"]
 [ext_resource type="PackedScene" uid="uid://edyank3gtfsx" path="res://entities/platform/platform.tscn" id="6_pq3l0"]
+[ext_resource type="PackedScene" uid="uid://bsb3p232rcpij" path="res://scripts/background/background.tscn" id="7_g7eoy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g40di"]
 size = Vector2(1179, 2.5)
@@ -31,6 +32,8 @@ tile_set = ExtResource("3_bmltb")
 position = Vector2(42, 154)
 scale = Vector2(0.2, 0.2)
 collision_mask = 7
+
+[node name="Background" parent="Player" instance=ExtResource("7_g7eoy")]
 
 [node name="Death" parent="." instance=ExtResource("4_g40di")]
 collision_layer = 4
