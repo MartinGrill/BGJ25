@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://fxin66snp468"]
+[gd_scene load_steps=9 format=3 uid="uid://fxin66snp468"]
 
 [ext_resource type="Script" uid="uid://c6edvh7rlvv2" path="res://scripts/win/win.gd" id="1_k3yje"]
 [ext_resource type="AudioStream" uid="uid://buuwly8anehlv" path="res://scripts/win/assets/sfx_sounds_fanfare3.wav" id="2_muv2o"]
+[ext_resource type="Texture2D" uid="uid://w1d6y6wsreal" path="res://scenes/sprites/world_tileset.png" id="3_py6te"]
 
 [sub_resource type="Animation" id="Animation_muv2o"]
 length = 0.001
@@ -43,6 +44,9 @@ _data = {
 &"fade_to_white": SubResource("Animation_k3yje")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py6te"]
+size = Vector2(16.3125, 16.25)
+
 [node name="Win" type="Area2D"]
 collision_layer = 0
 collision_mask = 4
@@ -70,6 +74,14 @@ wait_time = 0.5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_muv2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_py6te")
+region_enabled = true
+region_rect = Rect2(128, 48, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_py6te")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
