@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6edvh7rlvv2" path="res://scripts/win/win.gd" id="1_k3yje"]
 [ext_resource type="AudioStream" uid="uid://buuwly8anehlv" path="res://scripts/win/assets/sfx_sounds_fanfare3.wav" id="2_muv2o"]
-[ext_resource type="Texture2D" uid="uid://w1d6y6wsreal" path="res://scenes/sprites/world_tileset.png" id="3_py6te"]
+[ext_resource type="Texture2D" uid="uid://cxlwhmflb3y5g" path="res://scripts/win/assets/FinishFlag.png" id="3_py6te"]
 
 [sub_resource type="Animation" id="Animation_muv2o"]
 length = 0.001
@@ -77,7 +77,6 @@ stream = ExtResource("2_muv2o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_py6te")
-region_enabled = true
 region_rect = Rect2(128, 48, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
