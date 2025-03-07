@@ -16,14 +16,25 @@ func _process(delta: float) -> void:
 			time_elapsed += delta
 			var newSize = int(time_elapsed) + size
 			if	newSize > size:
+				time_elapsed -= 1
+				
+				var parentTML: TileMapLayer = self.get_parent().get_node("TileMapLayer")
+				if not parentTML: return
+				
+				var nextBlockVector = parentTML.local_to_map(parentTML.to_local(self.position))
+				nextBlockVector.y += newSize * -1
+				var nextBlockAtlas = parentTML.get_cell_atlas_coords(nextBlockVector)
+				print(nextBlockVector)
+				print(nextBlockAtlas)
+				if nextBlockAtlas != Vector2i(-1, -1):
+					return
+				
 				var shape = RectangleShape2D.new()
 				shape.size = colShape.shape.size
 				shape.size = Vector2(16, 32 * (size+1))
 				colShape.set_shape(shape)
-				
-				time_elapsed -= 1
+				tilemap.set_cell(Vector2i(0, newSize * -1), 0, Vector2i(2, 8))
 				size = newSize
-				tilemap.set_cell(Vector2i(0, size * -1), 0, Vector2i(2, 8))
 
 	if Input.is_action_just_released("first_ability"):
 		time_elapsed = 0
