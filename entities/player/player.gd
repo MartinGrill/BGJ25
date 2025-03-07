@@ -80,7 +80,6 @@ var dead := false
 @onready var death_player := $RestartLayer/DeathPlayer
 
 func quit() -> void:
-	print("a")
 	var main_menu = load("res://scenes/main_menu/main_menu.tscn") as PackedScene
 	get_tree().change_scene_to_packed(main_menu)
 
