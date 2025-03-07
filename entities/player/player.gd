@@ -13,7 +13,6 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var audio_player := $JumpPlayer
 @onready var hud := $CanvasLayer/Hud
 
-
 var _double_jump_charged := false
 var is_climbing := false
 var vine_entered := false
@@ -66,10 +65,37 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("quit"): quit()
+	if Input.is_action_just_pressed("restart"): restart()
+	
 	if Input.is_action_just_pressed("change_water"): change_element(Element.Water)
 	if Input.is_action_just_pressed("change_fire"): change_element(Element.Fire)
 	if Input.is_action_just_pressed("change_air"): change_element(Element.Air)
 	if Input.is_action_just_pressed("change_earth"): change_element(Element.Earth)
+
+var dead := false
+@onready var color_rect := $RestartLayer/ColorRect
+@onready var animation_player := $RestartLayer/AnimationPlayer
+@onready var timer = $RestartLayer/RestartTimer
+@onready var death_player := $RestartLayer/DeathPlayer
+
+func quit() -> void:
+	var main_menu = load("res://scenes/main_menu/main_menu.tscn") as PackedScene
+	get_tree().change_scene_to_packed(main_menu)
+
+func restart() -> void:
+	if dead: return
+	Engine.time_scale = 0.5
+	color_rect.visible = true
+	animation_player.play("death/fade_to_black")
+	death_player.play()
+	dead = true
+	
+	timer.start()
+
+func _on_restart_timer_timeout() -> void:
+	Engine.time_scale = 1
+	get_tree().reload_current_scene()	
 
 func try_jump() -> void:
 	if is_on_floor():
@@ -133,6 +159,7 @@ func _change_element_prime(element: Element):
 
 func _ready() -> void:
 		_change_element_prime(Element.Neutral)
+		color_rect.visible = false
 		
 func add_switch(element: Orb.Element) -> void:
 	match element:
@@ -167,4 +194,3 @@ func _on_vine_exited(body):
 
 func _on_level_bgm_player_finished() -> void:
 	bgm_player.play()
-	
