@@ -24,8 +24,6 @@ func _process(delta: float) -> void:
 				var nextBlockVector = parentTML.local_to_map(parentTML.to_local(self.position))
 				nextBlockVector.y += newSize * -1
 				var nextBlockAtlas = parentTML.get_cell_atlas_coords(nextBlockVector)
-				print(nextBlockVector)
-				print(nextBlockAtlas)
 				if nextBlockAtlas != Vector2i(-1, -1):
 					return
 				

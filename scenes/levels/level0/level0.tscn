@@ -60,7 +60,7 @@ offset_left = 528.0
 offset_top = -80.0
 offset_right = 668.0
 offset_bottom = -66.0
-text = "Press E to help saplings grow"
+text = "Hold E to help saplings grow"
 label_settings = SubResource("LabelSettings_iq8gt")
 
 [node name="Void" parent="." instance=ExtResource("6_643oo")]
