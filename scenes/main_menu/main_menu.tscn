@@ -96,7 +96,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_nl8w3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nl8w3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3rkf3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_70654")
-text = "Options"
+text = "Credits"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -144,6 +144,6 @@ stream = ExtResource("3_ob46e")
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_exit_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
