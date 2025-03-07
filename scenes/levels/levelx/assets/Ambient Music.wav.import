@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vluftm0q04d5"
+path="res://.godot/imported/Ambient Music.wav-65a8e0dff325fdcfed3286a4add2e79b.sample"
+
+[deps]
+
+source_file="res://scenes/levels/levelx/assets/Ambient Music.wav"
+dest_files=["res://.godot/imported/Ambient Music.wav-65a8e0dff325fdcfed3286a4add2e79b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
