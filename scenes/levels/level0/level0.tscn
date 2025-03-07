@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://blnledbmvcrl5"]
+[gd_scene load_steps=14 format=4 uid="uid://blnledbmvcrl5"]
 
 [ext_resource type="Script" uid="uid://vnv32nul2m30" path="res://scenes/levels/level0/level0.gd" id="1_4tgdn"]
 [ext_resource type="TileSet" uid="uid://c73qgjf1001x0" path="res://scenes/resources/level_tiles.tres" id="2_uwaoj"]
@@ -22,6 +22,9 @@ size = Vector2(56, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ybc4"]
 size = Vector2(128, 24)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vfep"]
+font_size = 10
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_4tgdn")
@@ -94,3 +97,11 @@ shape = SubResource("RectangleShape2D_0ybc4")
 
 [node name="Win" parent="." instance=ExtResource("7_8qpbn")]
 position = Vector2(1128, -136)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 696.0
+offset_top = -176.0
+offset_right = 832.0
+offset_bottom = -162.0
+text = "Press E to make water to ice"
+label_settings = SubResource("LabelSettings_1vfep")
