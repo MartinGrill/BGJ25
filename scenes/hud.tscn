@@ -92,7 +92,7 @@ text = "0 x"
 
 [node name="AirPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
-texture = ExtResource("6_eld54")
+texture = ExtResource("8_qkknv")
 expand_mode = 2
 
 [node name="Air" type="Label" parent="GridContainer"]
@@ -114,7 +114,7 @@ text = "0 x"
 
 [node name="EarthPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
-texture = ExtResource("8_qkknv")
+texture = ExtResource("6_eld54")
 expand_mode = 2
 
 [node name="Earth" type="Label" parent="GridContainer"]
