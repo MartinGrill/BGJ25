@@ -31,12 +31,12 @@ region_rect = Rect2(0, 32, 16, 16)
 
 [node name="Air" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("4_3337n")
+texture = ExtResource("5_yqh0o")
 region_rect = Rect2(0, 16, 16, 16)
 
 [node name="Earth" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("5_yqh0o")
+texture = ExtResource("4_3337n")
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Universal" type="Sprite2D" parent="."]
