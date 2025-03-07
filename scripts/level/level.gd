@@ -2,10 +2,8 @@ class_name Level extends Node
 
 @export_file("*.tscn") var next_level: String
 
-@export var player : Player
 @onready var tilemap = $TileMapLayer
 @onready var p = $Player
-
 
 func _process(delta: float) -> void:
 	if self.get_children().any(isSapling): sapling_logic()
