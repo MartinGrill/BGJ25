@@ -30,7 +30,7 @@ size = Vector2(144, 32)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xxj8a")
-next_level = "uid://btu8d01fpm2uf"
+next_level = "uid://ckshiowikpxhq"
 
 [node name="Sapling" parent="." instance=ExtResource("7_q714s")]
 position = Vector2(304, 112)

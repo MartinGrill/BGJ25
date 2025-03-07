@@ -4,9 +4,9 @@ const WALK_SPEED = 6000.0
 const JUMP_VELOCITY = -280.0
 ## Maximum speed at which the player can fall.
 const TERMINAL_VELOCITY = 300
-# var screen_size # Size of the game window.
 
 var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
+
 @onready var platform_detector := $PlatformDetector as RayCast2D
 @onready var sprite := $AnimatedSprite2D
 @onready var audio_player := $JumpPlayer
@@ -15,7 +15,7 @@ var _double_jump_charged := false
 var is_climbing := false
 var vine_entered := false
 
-var switches = {
+var switches := {
 	"water": 0,
 	"fire": 0,
 	"air": 0,
@@ -80,7 +80,6 @@ func try_jump() -> void:
 		return
 	velocity.y = JUMP_VELOCITY
 
-## Element system (TODO)
 enum Element { Neutral, Water, Fire, Air, Earth }
 var current_element : Element
 
@@ -107,11 +106,10 @@ func change_element(element: Element):
 				_change_element_prime(element)
 				return
 		Element.Neutral:
-			printerr("Can't change to neutral")
+			printerr("Player can't change to neutral")
 		
 	if(switches.get("universal") >= 1):
-		var n = switches.get("universal")
-		switches.set("universal", n-1)
+		switches.set("universal", switches.get("universal")-1)
 		_change_element_prime(element)
 		return
 	
@@ -145,3 +143,10 @@ func _on_vine_entered(body):
 
 func _on_vine_exited(body):
 	vine_entered = false
+
+## Background level music
+@onready var bgm_player := $LevelBGMPlayer
+
+func _on_level_bgm_player_finished() -> void:
+	bgm_player.play()
+	

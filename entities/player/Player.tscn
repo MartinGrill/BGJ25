@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://djnvb38vi6kjs"]
+[gd_scene load_steps=8 format=3 uid="uid://djnvb38vi6kjs"]
 
 [ext_resource type="Script" uid="uid://d3l3jee8l2033" path="res://entities/player/player.gd" id="1_g3lhm"]
 [ext_resource type="SpriteFrames" uid="uid://rrpl34xdbvdg" path="res://entities/player/assets/player_neutral.tres" id="2_453mm"]
 [ext_resource type="AudioStream" uid="uid://s57or71fm1p3" path="res://entities/player/assets/jump.wav" id="3_l3c03"]
 [ext_resource type="PackedScene" uid="uid://bsb3p232rcpij" path="res://scripts/background/background.tscn" id="4_eaotn"]
 [ext_resource type="PackedScene" uid="uid://cnqew4ivejuta" path="res://scenes/hud.tscn" id="5_g3lhm"]
+[ext_resource type="AudioStream" uid="uid://vluftm0q04d5" path="res://entities/player/assets/Ambient Music.wav" id="6_4pwj0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eaotn"]
 radius = 27.0
@@ -42,3 +43,9 @@ volume_db = -10.0
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("5_g3lhm")]
 position = Vector2(1000, 5)
+
+[node name="LevelBGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4pwj0")
+autoplay = true
+
+[connection signal="finished" from="LevelBGMPlayer" to="." method="_on_level_bgm_player_finished"]

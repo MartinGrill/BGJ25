@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://btu8d01fpm2uf"]
+[gd_scene load_steps=7 format=4 uid="uid://ocego1v23x1k"]
 
 [ext_resource type="Script" uid="uid://cbo4wemg3pvau" path="res://scenes/levels/test_level/tutorial.gd" id="1_opnpg"]
 [ext_resource type="PackedScene" uid="uid://djnvb38vi6kjs" path="res://entities/player/Player.tscn" id="1_ymgc8"]
@@ -9,11 +9,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g40di"]
 size = Vector2(701, 17)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq3l0"]
-size = Vector2(29, 17)
-
 [node name="Main2" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_opnpg")
+next_level = "uid://3rb2o43qbsk2"
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("1_ymgc8")]
@@ -35,7 +33,3 @@ shape = SubResource("RectangleShape2D_g40di")
 
 [node name="Win" parent="." instance=ExtResource("5_r23bs")]
 position = Vector2(73, 52)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Win"]
-position = Vector2(488, 58)
-shape = SubResource("RectangleShape2D_pq3l0")

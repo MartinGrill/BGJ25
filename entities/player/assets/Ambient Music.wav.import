@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://vluftm0q04d5"
-path="res://.godot/imported/Ambient Music.wav-65a8e0dff325fdcfed3286a4add2e79b.sample"
+path="res://.godot/imported/Ambient Music.wav-3b31018e74d2e23e90c9d3273ae5e663.sample"
 
 [deps]
 
-source_file="res://scenes/levels/levelx/assets/Ambient Music.wav"
-dest_files=["res://.godot/imported/Ambient Music.wav-65a8e0dff325fdcfed3286a4add2e79b.sample"]
+source_file="res://entities/player/assets/Ambient Music.wav"
+dest_files=["res://.godot/imported/Ambient Music.wav-3b31018e74d2e23e90c9d3273ae5e663.sample"]
 
 [params]
 
