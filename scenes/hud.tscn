@@ -42,7 +42,8 @@ columns = 4
 
 [node name="WaterCounter" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "0 x"
 
 [node name="WaterPic" type="TextureRect" parent="GridContainer"]
@@ -52,7 +53,8 @@ expand_mode = 2
 
 [node name="Water" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Water"
 
 [node name="Key 1" type="TextureRect" parent="GridContainer"]
@@ -62,7 +64,8 @@ expand_mode = 2
 
 [node name="FireCounter" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "0 x"
 
 [node name="FirePic" type="TextureRect" parent="GridContainer"]
@@ -72,7 +75,8 @@ expand_mode = 2
 
 [node name="Fire" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Fire"
 
 [node name="Key 2" type="TextureRect" parent="GridContainer"]
@@ -82,7 +86,8 @@ expand_mode = 2
 
 [node name="AirCounter" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "0 x"
 
 [node name="AirPic" type="TextureRect" parent="GridContainer"]
@@ -92,7 +97,8 @@ expand_mode = 2
 
 [node name="Air" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Air"
 
 [node name="Key 3" type="TextureRect" parent="GridContainer"]
@@ -102,7 +108,8 @@ expand_mode = 2
 
 [node name="EarthCounter" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "0 x"
 
 [node name="EarthPic" type="TextureRect" parent="GridContainer"]
@@ -112,7 +119,8 @@ expand_mode = 2
 
 [node name="Earth" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Earth"
 
 [node name="Key 4" type="TextureRect" parent="GridContainer"]
@@ -122,7 +130,8 @@ expand_mode = 2
 
 [node name="UniversalCounter" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "0 x"
 
 [node name="UniversalPic" type="TextureRect" parent="GridContainer"]
@@ -132,7 +141,8 @@ expand_mode = 2
 
 [node name="Universal" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Universal"
 
 [node name="Empty" type="TextureRect" parent="GridContainer"]
