@@ -8,7 +8,7 @@ class_name Level extends Node
 func _process(delta: float) -> void:
 	if self.get_children().any(isSapling): sapling_logic()
 	
-	if p.current_element == Player.Element.Water and Input.is_action_just_pressed("first_ability"):
+	if p.current_element == Player.Element.Water and Input.is_action_pressed("first_ability"):
 		makeWaterToIce()
 
 
