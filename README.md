@@ -2,6 +2,8 @@
 
 Beginner Game Jam 2025 entry by Gameschmankerl Studios
 
+[MartinGrill/BGJ25: Beginner-Gamejam 2025](https://github.com/MartinGrill/BGJ25)
+
 ## Credits
 
 - [Character](https://godotengine.org/asset-library/asset/2712)
