@@ -35,12 +35,13 @@ offset_left = -272.0
 offset_top = -144.0
 offset_right = 224.0
 offset_bottom = -27.0
-text = "- [Character] https://godotengine.org/asset-library/asset/2712
-- [Sprites & Sound Effects] https://brackeysgames.itch.io/brackeys-platformer-bundle
-- [Background] https://anokolisa.itch.io/basic-140-tiles-grassland-and-mines
-- [Sprites] https://alifdoll.itch.io/rocks-and-gems
-- [Main Menu Music] https://opengameart.org/content/crystal-cave-song18
-- [Sound Effects] https://opengameart.org/content/512-sound-effects-8-bit-style"
+text = "Attributions:
+- Character: https://godotengine.org/asset-library/asset/2712
+- Sprites & Sound Effects: https://brackeysgames.itch.io/brackeys-platformer-bundle
+- Background:https://anokolisa.itch.io/basic-140-tiles-grassland-and-mines
+- Sprites: https://alifdoll.itch.io/rocks-and-gems
+- Main Menu Music: https://opengameart.org/content/crystal-cave-song18
+- Sound Effects: https://opengameart.org/content/512-sound-effects-8-bit-style"
 label_settings = SubResource("LabelSettings_csssu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

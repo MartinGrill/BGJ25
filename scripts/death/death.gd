@@ -11,7 +11,7 @@ var dead := false
 
 func _ready() -> void:
 	color_rect.visible = false
-	
+
 func _process(delta: float) -> void:
 	if dead: return
 	
@@ -25,7 +25,6 @@ func _process(delta: float) -> void:
 		dead = true
 		
 		timer.start()
-		
 
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1

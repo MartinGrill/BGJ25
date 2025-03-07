@@ -13,7 +13,6 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var audio_player := $JumpPlayer
 @onready var hud := $CanvasLayer/Hud
 
-
 var _double_jump_charged := false
 var is_climbing := false
 var vine_entered := false
@@ -66,7 +65,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("quit"): quit()
 	if Input.is_action_just_pressed("restart"): restart()
+	
 	if Input.is_action_just_pressed("change_water"): change_element(Element.Water)
 	if Input.is_action_just_pressed("change_fire"): change_element(Element.Fire)
 	if Input.is_action_just_pressed("change_air"): change_element(Element.Air)
@@ -77,7 +78,12 @@ var dead := false
 @onready var animation_player := $RestartLayer/AnimationPlayer
 @onready var timer = $RestartLayer/RestartTimer
 @onready var death_player := $RestartLayer/DeathPlayer
-	
+
+func quit() -> void:
+	print("a")
+	var main_menu = load("res://scenes/main_menu/main_menu.tscn") as PackedScene
+	get_tree().change_scene_to_packed(main_menu)
+
 func restart() -> void:
 	if dead: return
 	Engine.time_scale = 0.5
