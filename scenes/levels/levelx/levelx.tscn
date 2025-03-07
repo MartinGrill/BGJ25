@@ -43,7 +43,7 @@ tile_map_data = PackedByteArray("AAACAAgAAAAAAAAAAAABAAgAAAAAAAAAAAAAAAkAAAAAAAE
 tile_set = ExtResource("2_r5ke1")
 
 [node name="Player" parent="." instance=ExtResource("4_vfwpv")]
-position = Vector2(1475, 180)
+position = Vector2(8, 104)
 scale = Vector2(0.2, 0.2)
 collision_mask = 7
 
@@ -87,18 +87,14 @@ element = 4
 
 [node name="EarthOrb2" parent="." instance=ExtResource("3_11ih8")]
 position = Vector2(2040, 360)
-element = 4
 
 [node name="FireOrb" parent="." instance=ExtResource("3_11ih8")]
 position = Vector2(440, 248)
-element = 2
 
 [node name="AirOrb" parent="." instance=ExtResource("3_11ih8")]
 position = Vector2(825, 200)
-element = 3
 
 [node name="WaterOrb" parent="." instance=ExtResource("3_11ih8")]
 position = Vector2(1224, 184)
-element = 1
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
