@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnqew4ivejuta"]
+[gd_scene load_steps=15 format=3 uid="uid://cnqew4ivejuta"]
 
 [ext_resource type="Texture2D" uid="uid://u21e26sd3w2f" path="res://scenes/sprites/keyboard/1-Key.png" id="1_0i1j5"]
+[ext_resource type="Script" uid="uid://edyclp51uif5" path="res://scenes/hud.gd" id="1_mphia"]
 [ext_resource type="Texture2D" uid="uid://7li47pwrpqa" path="res://entities/orb/assets/33.png" id="2_mphia"]
 [ext_resource type="Texture2D" uid="uid://bnst4iqkxpp7c" path="res://scenes/sprites/keyboard/2-Key.png" id="3_0m4u7"]
 [ext_resource type="Texture2D" uid="uid://b3q2b0ybporpm" path="res://entities/orb/assets/34.png" id="4_apjy4"]
@@ -26,17 +27,23 @@ region = Rect2(0, 2, 32, 32)
 atlas = ExtResource("7_3swnk")
 region = Rect2(0, 2, 32, 32)
 
-[node name="Hud" type="Node2D"]
+[node name="Hud" type="Node2D" node_paths=PackedStringArray("water_orbs_counter", "fire_orbs_counter", "air_orbs_counter", "earth_orbs_counter", "universal_orbs_counter")]
+script = ExtResource("1_mphia")
+water_orbs_counter = NodePath("GridContainer/WaterCounter")
+fire_orbs_counter = NodePath("GridContainer/FireCounter")
+air_orbs_counter = NodePath("GridContainer/AirCounter")
+earth_orbs_counter = NodePath("GridContainer/EarthCounter")
+universal_orbs_counter = NodePath("GridContainer/UniversalCounter")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-columns = 3
+columns = 4
 
-[node name="Key 1" type="TextureRect" parent="GridContainer"]
+[node name="WaterCounter" type="Label" parent="GridContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_0i1j5")
-expand_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 x"
 
 [node name="WaterPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -48,10 +55,15 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Water"
 
-[node name="Key 2" type="TextureRect" parent="GridContainer"]
+[node name="Key 1" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_mphia")
+texture = SubResource("AtlasTexture_0i1j5")
 expand_mode = 2
+
+[node name="FireCounter" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 x"
 
 [node name="FirePic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -63,10 +75,15 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Fire"
 
-[node name="Key 3" type="TextureRect" parent="GridContainer"]
+[node name="Key 2" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_0m4u7")
+texture = SubResource("AtlasTexture_mphia")
 expand_mode = 2
+
+[node name="AirCounter" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 x"
 
 [node name="AirPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -78,10 +95,15 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Air"
 
-[node name="Key 4" type="TextureRect" parent="GridContainer"]
+[node name="Key 3" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_apjy4")
+texture = SubResource("AtlasTexture_0m4u7")
 expand_mode = 2
+
+[node name="EarthCounter" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 x"
 
 [node name="EarthPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -93,9 +115,15 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Earth"
 
-[node name="Empty" type="TextureRect" parent="GridContainer"]
+[node name="Key 4" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
+texture = SubResource("AtlasTexture_apjy4")
 expand_mode = 2
+
+[node name="UniversalCounter" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0 x"
 
 [node name="UniversalPic" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
@@ -106,3 +134,7 @@ expand_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Universal"
+
+[node name="Empty" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+expand_mode = 2

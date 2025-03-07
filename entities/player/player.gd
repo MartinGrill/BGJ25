@@ -5,11 +5,14 @@ const JUMP_VELOCITY = -280.0
 ## Maximum speed at which the player can fall.
 const TERMINAL_VELOCITY = 300
 
+
 var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 
 @onready var platform_detector := $PlatformDetector as RayCast2D
 @onready var sprite := $AnimatedSprite2D
 @onready var audio_player := $JumpPlayer
+@onready var hud := $CanvasLayer/Hud
+
 
 var _double_jump_charged := false
 var is_climbing := false
@@ -89,21 +92,25 @@ func change_element(element: Element):
 			if(switches.get("water") >= 1):
 				switches.set("water", switches.get("water")-1)
 				_change_element_prime(element)
+				hud.update_water_orbs_counter_label(switches.get("water"))
 				return
 		Element.Fire:
 			if(switches.get("fire") >= 1):
 				switches.set("fire", switches.get("fire")-1)
 				_change_element_prime(element)
+				hud.update_fire_orbs_counter_label(switches.get("fire"))
 				return
 		Element.Air:
 			if(switches.get("air") >= 1):
 				switches.set("air", switches.get("air")-1)
 				_change_element_prime(element)
+				hud.update_air_orbs_counter_label(switches.get("air"))
 				return
 		Element.Earth:
 			if(switches.get("earth") >= 1):
 				switches.set("earth", switches.get("earth")-1)
 				_change_element_prime(element)
+				hud.update_earth_orbs_counter_label(switches.get("earth"))
 				return
 		Element.Neutral:
 			printerr("Player can't change to neutral")
@@ -111,6 +118,7 @@ func change_element(element: Element):
 	if(switches.get("universal") >= 1):
 		switches.set("universal", switches.get("universal")-1)
 		_change_element_prime(element)
+		hud.update_universal_orbs_counter_label(switches.get("universal"))
 		return
 	
 	
@@ -128,11 +136,21 @@ func _ready() -> void:
 		
 func add_switch(element: Orb.Element) -> void:
 	match element:
-		Orb.Element.Universal: switches.set("universal", switches.get("universal") + 1)
-		Orb.Element.Water: switches.set("water", switches.get("water") + 1)
-		Orb.Element.Fire: switches.set("fire", switches.get("fire") + 1)
-		Orb.Element.Air: switches.set("air", switches.get("air") + 1)
-		Orb.Element.Earth: switches.set("earth", switches.get("earth") + 1)
+		Orb.Element.Universal: 
+			switches.set("universal", switches.get("universal") + 1)
+			hud.update_universal_orbs_counter_label(switches.get("universal"))
+		Orb.Element.Water:
+			switches.set("water", switches.get("water") + 1)
+			hud.update_water_orbs_counter_label(switches.get("water"))
+		Orb.Element.Fire:
+			switches.set("fire", switches.get("fire") + 1)
+			hud.update_fire_orbs_counter_label(switches.get("fire"))
+		Orb.Element.Air:
+			switches.set("air", switches.get("air") + 1)
+			hud.update_air_orbs_counter_label(switches.get("air"))
+		Orb.Element.Earth:
+			switches.set("earth", switches.get("earth") + 1)
+			hud.update_earth_orbs_counter_label(switches.get("earth"))
 		
 func connectSignalsVine(vine):
 	vine.body_entered.connect(_on_vine_entered)

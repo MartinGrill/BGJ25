@@ -41,7 +41,7 @@ volume_db = -10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Hud" parent="CanvasLayer" instance=ExtResource("5_g3lhm")]
+[node name="Hud" parent="CanvasLayer" groups=["Hud"] instance=ExtResource("5_g3lhm")]
 position = Vector2(1000, 5)
 
 [node name="LevelBGMPlayer" type="AudioStreamPlayer" parent="."]
