@@ -12,10 +12,10 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_csssu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr5fm"]
-size = Vector2(9, 20)
+size = Vector2(1, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csssu"]
-size = Vector2(50, 10)
+size = Vector2(1, 125)
 
 [node name="CreditLevel" type="Node2D"]
 script = ExtResource("1_csssu")
@@ -32,9 +32,9 @@ scale = Vector2(0.2, 0.2)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -272.0
-offset_top = -144.0
+offset_top = -153.0
 offset_right = 224.0
-offset_bottom = -27.0
+offset_bottom = -16.0
 text = "Attributions:
 - Character: https://godotengine.org/asset-library/asset/2712
 - Sprites & Sound Effects: https://brackeysgames.itch.io/brackeys-platformer-bundle
@@ -48,14 +48,14 @@ label_settings = SubResource("LabelSettings_csssu")
 physics_material_override = SubResource("PhysicsMaterial_csssu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-19.5, -8)
+position = Vector2(-15.5, -63)
 shape = SubResource("RectangleShape2D_dr5fm")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_csssu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(7, -22)
+position = Vector2(31.5, -65.5)
 shape = SubResource("RectangleShape2D_csssu")
 
 [node name="Win" parent="." instance=ExtResource("4_dr5fm")]
