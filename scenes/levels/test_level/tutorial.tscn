@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://bsjtgn1ctnyfe"]
 
-[ext_resource type="Script" uid="uid://cbo4wemg3pvau" path="res://scenes/levels/level0/tutorial.gd" id="1_jaenq"]
+[ext_resource type="Script" uid="uid://cbo4wemg3pvau" path="res://scenes/levels/test_level/tutorial.gd" id="1_jaenq"]
 [ext_resource type="PackedScene" uid="uid://djnvb38vi6kjs" path="res://entities/player/Player.tscn" id="1_ymgc8"]
 [ext_resource type="TileSet" uid="uid://c73qgjf1001x0" path="res://scenes/resources/level_tiles.tres" id="3_bmltb"]
 [ext_resource type="PackedScene" uid="uid://cyw383v2olamx" path="res://scripts/death/death.tscn" id="4_g40di"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://edyank3gtfsx" path="res://entities/platform/platform.tscn" id="6_pq3l0"]
 [ext_resource type="PackedScene" uid="uid://xwjbtits0qn5" path="res://entities/orb/orb.tscn" id="8_ha56g"]
 [ext_resource type="PackedScene" uid="uid://bf536fabufto6" path="res://entities/sapling/sapling.tscn" id="9_ntt21"]
-[ext_resource type="AudioStream" uid="uid://b6l1yyb8isnwd" path="res://scenes/levels/level0/assets/Ambient Music.wav" id="10_hsofu"]
+[ext_resource type="AudioStream" uid="uid://b6l1yyb8isnwd" path="res://scenes/levels/test_level/assets/Ambient Music.wav" id="10_hsofu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g40di"]
 size = Vector2(1415.5, 2.5)
