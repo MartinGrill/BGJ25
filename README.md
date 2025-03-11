@@ -3,6 +3,7 @@
 Beginner Game Jam 2025 entry by Gameschmankerl Studios
 
 [MartinGrill/BGJ25: Beginner-Gamejam 2025](https://github.com/MartinGrill/BGJ25)
+[itch.io link](https://martingrill.itch.io/elementum)
 
 ## Credits
 
